@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { CopySlash, RefreshCw } from "lucide-react"
 
-const MainPage = () => {
+const MainPage = ({
+  password, setPassword, length, setLength,
+  useUppercase, setUseUppercase, useLowercase, setUseLowercase,
+  useNumbers, setUseNumbers, useSymbols, setUseSymbols
+}) => {
 
-  const [password, setPassword] = useState('')
-  const [length, setLength] = useState(50)
-  const [useUppercase, setUseUppercase] = useState(true)
-  const [useLowercase, setUseLowercase] = useState(true)
-  const [useNumbers, setUseNumbers] = useState(true)
-  const [useSymbols, setUseSymbols] = useState(false)
+  // const [password, setPassword] = useState('')
+  // const [length, setLength] = useState(50)
+  // const [useUppercase, setUseUppercase] = useState(true)
+  // const [useLowercase, setUseLowercase] = useState(true)
+  // const [useNumbers, setUseNumbers] = useState(true)
+  // const [useSymbols, setUseSymbols] = useState(false)
 
 
   const generatePassword = () => {
@@ -84,10 +88,7 @@ const MainPage = () => {
               Copy
             </button>
           </div>
-
-
         </div>
-
       </div>
     </>
   );
