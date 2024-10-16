@@ -4,7 +4,13 @@ function Slider({onChangeLength}) {
   const [value, setValue] = useState(15);
 
   const handleChange = (event) => {
-    const newValue = event.target.value;
+    const newValue = parseInt(event.target.value);
+    setValue(newValue);
+    onChangeLength(newValue);
+  };
+
+  const handleButtonClick = (increment) => {
+    const newValue = Math.max(1, Math.min(50, value + increment)); // Prevent going below 1 or above 50
     setValue(newValue);
     onChangeLength(newValue);
   };
@@ -13,11 +19,12 @@ function Slider({onChangeLength}) {
     <div className="flex items-center justify-center mt-10">
       <button 
         className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-600" 
-        onClick={() => {
-          const newValue = value > 1 ? value - 1 : 1;
-          setValue(newValue);
-          onChangeLength(newValue);
-        }}
+        // onClick={() => {
+        //   const newValue = value > 1 ? value - 1 : 1;
+        //   setValue(newValue);
+        //   onChangeLength(newValue);
+        // }}
+        onClick={() => handleButtonClick(-1)}
       >
         -
       </button>
@@ -34,11 +41,12 @@ function Slider({onChangeLength}) {
       />
       <button 
         className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-600" 
-        onClick={() => {
-          const newValue = value < 50 ? value + 1 : 50;
-          setValue(newValue);
-          onChangeLength(newValue);
-        }}
+        // onClick={() => {
+        //   const newValue = value < 50 ? value + 1 : 50;
+        //   setValue(newValue);
+        //   onChangeLength(newValue);
+        // }}
+        onClick={() => handleButtonClick(1)}
       >
         +
       </button>
