@@ -1,15 +1,39 @@
 import React, { useState } from 'react'
 import Slider from './Slider'
-import img1 from '../Assets/1copy.png'
 import Checkbox from './Checkbox'
-const Down = ({ useUppercase, setUseUppercase, useLowercase, setUseLowercase, useNumbers, setUseNumbers, useSymbols, setUseSymbols, passwordLength, setPasswordLength }) => {
+import img1 from '../Assets/1done.png'
+import img2 from '../Assets/2done.png'
+import img3 from '../Assets/3done.png'
+import img4 from '../Assets/4done.png'
+import img5 from '../Assets/5done.png'
+
+
+
+const Down = ({ useUppercase, setUseUppercase, useLowercase, setUseLowercase, useNumbers, setUseNumbers, useSymbols, setUseSymbols, passwordLength, setPasswordLength, passwordStrength }) => {
+
+    const getImageByStrength = () => {
+        switch (passwordStrength) {
+            case 'Very strong':
+                return img5;
+            case 'Strong':
+                return img4;
+            case 'Good':
+                return img3;
+            case 'Weak':
+                return img2;
+            case 'Very weak':
+                return img1;
+            default:
+                return img1; // Default image if strength is not determined
+        }
+    };
 
     return (
         <>
             {/* image --- */}
             <div className='flex justify-evenly mt-20 mx-16'>
                 <div className="flex items-center justify-center h-96 w-96 mb-20">
-                    <img src={img1} alt="Description of image" className="w-full h-full object-cover" />
+                    <img src={getImageByStrength()} alt="Description of image" className="w-full h-full object-cover" />
                 </div>
 
                 <div>

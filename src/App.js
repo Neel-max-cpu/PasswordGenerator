@@ -15,6 +15,23 @@ function App() {
   const [useSymbols, setUseSymbols] = useState(false);
 
 
+  const getPasswordStrength = () => {    
+    if (passwordLength > 12 && (useUppercase || useLowercase) && (useNumbers || useSymbols)) {
+      return 'Very strong'    
+    } else if (passwordLength > 8 && (useUppercase || useLowercase) && (useNumbers || useSymbols)) {
+      return 'Strong'    
+    } else if (passwordLength > 6) {
+      return 'Good'
+    } else if (passwordLength > 4) {
+      return 'Weak'
+    } else {
+      return 'Very Weak'
+    }
+  }
+
+  const passwordStrength = getPasswordStrength();
+
+
   return (
     <div>
       <MainPage
@@ -44,6 +61,7 @@ function App() {
       setUseNumbers={setUseNumbers}
       useSymbols={useSymbols}
       setUseSymbols={setUseSymbols}
+      passwordStrength={passwordStrength}
       />
       
     </div>

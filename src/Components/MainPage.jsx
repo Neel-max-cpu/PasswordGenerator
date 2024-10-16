@@ -38,14 +38,16 @@ const MainPage = ({
   }
 
   const getPasswordStrength = () => {    
-    if (passwordLength > 12 && useUppercase && useLowercase && useNumbers && useSymbols) {
+    if (passwordLength > 12 && (useUppercase || useLowercase) && (useNumbers || useSymbols)) {
       return 'Very strong'    
-    } else if (passwordLength > 8 && ((useUppercase && useLowercase && useNumbers) || useSymbols)) {
+    } else if (passwordLength > 8 && (useUppercase || useLowercase) && (useNumbers || useSymbols)) {
       return 'Strong'    
     } else if (passwordLength > 6) {
-      return 'Medium'
-    } else {
+      return 'Good'
+    } else if (passwordLength > 4) {
       return 'Weak'
+    } else {
+      return 'Very Weak'
     }
   }
 
@@ -53,17 +55,17 @@ const MainPage = ({
     const strength = getPasswordStrength();
     switch (strength) {
       case 'Very strong':
-        return 'bg-bright-green'; // Bright green
+        return 'bg-green-500'; 
       case 'Strong':
-        return 'bg-yellow-500'; // Yellow
+        return 'bg-green-500'; 
       case 'Good':
-        return 'bg-bright-yellow'; // Bright yellow
+        return 'bg-yellow-500'; 
       case 'Weak':
-        return 'bg-red-500'; // Red
-      case 'Very weak':
-        return 'bg-bright-red'; // Bright red
+        return 'bg-red-500'; 
+      case 'Very Weak':
+        return 'bg-red-500';     
       default:
-        return 'bg-gray-200'; // Default gray color
+        return 'bg-gray-200'; 
     }
   };
 
@@ -80,7 +82,7 @@ const MainPage = ({
                 className="text-xl flex-grow mr-2" value={password.length > 21 ? `${password.slice(0, 21)}...` : password}
               />
               <div className={`mx-2 bg-green-500 text-white px-3 py-2 rounded-lg ${getStrengthColor()}`}>
-                <span className="text-sm  font-medium text-black">{getPasswordStrength()}</span>
+                <span className="text-sm  font-medium text-white">{getPasswordStrength()}</span>
               </div>
             </div>
             <button onClick={copyPassword} className="bg-purple-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 text-base" >
