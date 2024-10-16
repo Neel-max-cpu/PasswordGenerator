@@ -1,7 +1,21 @@
-# Getting Started with Create React App
+# PasswordGenerator - Random Password generator :tada:
+
+## Clone of Avast Password Generator [Link](https://www.avast.com/en-in/random-password-generator#pc)📝
+
+<!-- ## Live Demo here  -> [Link](https://snap-magic.vercel.app/) ⭐ -->
+
+<!-- ## Working of the App Video -> [Link](https://youtu.be/9y6bvnO9Yq8)✨ -->
+
+### Images of the App with there prompt! :memo:
+![Image 1](https://github.com/Neel-max-cpu/PasswordGenerator/blob/main/public/image/1.png?raw=true)
+![Image 2](https://github.com/Neel-max-cpu/PasswordGenerator/blob/main/public/image/2.png?raw=true)
+![Image 3](https://github.com/Neel-max-cpu/PasswordGenerator/blob/main/public/image/3.png?raw=true)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Also, Styling done with Tailwind CSS
 
+## Getting Started with Create React App
 ## Available Scripts
 
 In the project directory, you can run:
@@ -68,3 +82,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+😃
