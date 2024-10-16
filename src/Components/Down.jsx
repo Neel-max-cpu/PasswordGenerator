@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import Slider from './Slider'
 import img1 from '../Assets/1copy.png'
 import Checkbox from './Checkbox'
-const Down = ({ password, length, useUppercase, setUseUppercase, useLowercase, setUseLowercase, useNumbers, setUseNumbers, useSymbols, setUseSymbols }) => {
-
-    const [passwordLength, setPasswordLength] = useState(15); // Initial password length state
-
+const Down = ({ useUppercase, setUseUppercase, useLowercase, setUseLowercase, useNumbers, setUseNumbers, useSymbols, setUseSymbols, passwordLength, setPasswordLength }) => {
 
     return (
         <>
@@ -19,44 +16,24 @@ const Down = ({ password, length, useUppercase, setUseUppercase, useLowercase, s
                     <h1 className='text-black text-2xl text-center'>Password length: {passwordLength}</h1>
                     <Slider onChangeLength={setPasswordLength} />
 
-                    <h1 className='mt-20 text-black text-2xl text-center'>Characters Used:</h1>
-                    <div className="mt-10 flex justify-center items-center space-x-4">
-                        <label className="flex items-center space-x-2">
-                            <input type="checkbox" className="form-checkbox p-4 h-4 w-4 text-blue-500" />
-                            <h1 className="text-black text-2xl font-bold">ABC</h1>
-                        </label>
-                        <label className="flex items-center space-x-2">
-                            <input type="checkbox" className="form-checkbox p-4 h-4 w-4 text-blue-500" />
-                            <h1 className="text-black text-2xl font-bold">abc</h1>
-                        </label>
-                        <label className="flex items-center space-x-2">
-                            <input type="checkbox" className="form-checkbox p-4 h-4 w-4 text-blue-500" />
-                            <h1 className="text-black text-2xl font-bold">123</h1>
-                        </label>
-                        <label className="flex items-center space-x-2">
-                            <input type="checkbox" className="form-checkbox p-4 h-4 w-4 text-blue-500" />
-                            <h1 className="text-black text-2xl font-bold">#$&</h1>
-                        </label>
-                    </div>
-
                     <div className="space-y-2">
-                        <label className="block text-sm font-medium text-gray-700">Characters used:</label>
+                        <h1 className="mt-20 text-black text-2xl text-center">Characters used:</h1>
                         <div className="flex space-x-4">
                             <div className="flex items-center">
                                 <Checkbox id="uppercase" checked={useUppercase} onCheckedChange={setUseUppercase} />
-                                <label htmlFor="uppercase" className="ml-2 text-sm">ABC</label>
+                                <label htmlFor="uppercase" className="text-black text-2xl font-bold">ABC</label>
                             </div>
                             <div className="flex items-center">
                                 <Checkbox id="lowercase" checked={useLowercase} onCheckedChange={setUseLowercase} />
-                                <label htmlFor="lowercase" className="ml-2 text-sm">abc</label>
+                                <label htmlFor="lowercase" className="text-black text-2xl font-bold">abc</label>
                             </div>
                             <div className="flex items-center">
                                 <Checkbox id="numbers" checked={useNumbers} onCheckedChange={setUseNumbers} />
-                                <label htmlFor="numbers" className="ml-2 text-sm">123</label>
+                                <label htmlFor="numbers" className="text-black text-2xl font-bold">123</label>
                             </div>
                             <div className="flex items-center">
                                 <Checkbox id="symbols" checked={useSymbols} onCheckedChange={setUseSymbols} />
-                                <label htmlFor="symbols" className="ml-2 text-sm">#$&</label>
+                                <label htmlFor="symbols" className="text-black text-2xl font-bold">#$&</label>
                             </div>
                         </div>
                     </div>

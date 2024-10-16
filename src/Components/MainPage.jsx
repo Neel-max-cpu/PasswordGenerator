@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { CopySlash, RefreshCw } from "lucide-react"
 
 const MainPage = ({
   password, setPassword, length, setLength,
   useUppercase, setUseUppercase, useLowercase, setUseLowercase,
-  useNumbers, setUseNumbers, useSymbols, setUseSymbols
+  useNumbers, setUseNumbers, useSymbols, setUseSymbols,passwordLength,setPasswordLength
 }) => {
 
   // const [password, setPassword] = useState('')
@@ -22,28 +21,28 @@ const MainPage = ({
     if (useNumbers) charset += '0123456789'
     if (useSymbols) charset += '!@#$%^&*()_+{}[]|:;<>,.?/~'
 
-    let newPassword = ''
-    for (let i = 0; i < length; i++) {
+    let newPassword = ''    
+    for (let i = 0; i < passwordLength; i++) {
       newPassword += charset.charAt(Math.floor(Math.random() * charset.length))
     }
     setPassword(newPassword)
   }
 
   useEffect(() => {
-    generatePassword()
-  }, [length, useUppercase, useLowercase, useNumbers, useSymbols])
+    generatePassword()  
+  }, [passwordLength, useUppercase, useLowercase, useNumbers, useSymbols])
 
   const copyPassword = () => {
     navigator.clipboard.writeText(password)
     alert('Password copied to clipboard!')
   }
 
-  const getPasswordStrength = () => {
-    if (length > 12 && useUppercase && useLowercase && useNumbers && useSymbols) {
-      return 'Very strong'
-    } else if (length > 8 && ((useUppercase && useLowercase && useNumbers) || useSymbols)) {
-      return 'Strong'
-    } else if (length > 6) {
+  const getPasswordStrength = () => {    
+    if (passwordLength > 12 && useUppercase && useLowercase && useNumbers && useSymbols) {
+      return 'Very strong'    
+    } else if (passwordLength > 8 && ((useUppercase && useLowercase && useNumbers) || useSymbols)) {
+      return 'Strong'    
+    } else if (passwordLength > 6) {
       return 'Medium'
     } else {
       return 'Weak'
@@ -78,7 +77,7 @@ const MainPage = ({
           <div className='flex mx-2'>
             <div className="flex items-center space-x-2 ml-10  mr-2 border-2 border-black rounded-lg px-1 py-1 w-96 focus:outline-none focus:ring-2 focus:ring-blue-500">
               <input
-                className=" flex-grow mr-2" value={password.length > 21 ? `${password.slice(0, 21)}...` : password}
+                className="text-xl flex-grow mr-2" value={password.length > 21 ? `${password.slice(0, 21)}...` : password}
               />
               <div className={`mx-2 bg-green-500 text-white px-3 py-2 rounded-lg ${getStrengthColor()}`}>
                 <span className="text-sm  font-medium text-black">{getPasswordStrength()}</span>

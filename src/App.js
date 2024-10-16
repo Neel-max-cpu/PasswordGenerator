@@ -7,8 +7,8 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [password, setPassword] = useState('');
-  const [length, setLength] = useState(50);
+  const [password, setPassword] = useState('');  
+  const [passwordLength, setPasswordLength] = useState(15); 
   const [useUppercase, setUseUppercase] = useState(true);
   const [useLowercase, setUseLowercase] = useState(true);
   const [useNumbers, setUseNumbers] = useState(true);
@@ -18,10 +18,10 @@ function App() {
   return (
     <div>
       <MainPage
+      passwordLength={passwordLength}
+      setPasswordLength={setPasswordLength}
       password={password}
       setPassword={setPassword}
-      length={length}
-      setLength={setLength}
       useUppercase={useUppercase}
       setUseUppercase={setUseUppercase}
       useLowercase={useLowercase}
@@ -33,8 +33,9 @@ function App() {
       />
 
       <Down
-      password={password}
-      length={length}
+      passwordLength={passwordLength}
+      setPasswordLength={setPasswordLength}
+      password={password}      
       useUppercase={useUppercase}
       setUseUppercase={setUseUppercase}
       useLowercase={useLowercase}
