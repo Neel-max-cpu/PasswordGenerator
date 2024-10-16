@@ -1,0 +1,5 @@
+1-4 very weak (bright red)
+5-7 weak (red)
+8-9 good (bright yellow)
+10-11 strong (yellow)
+12-50 very strong (bright green)
