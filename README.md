@@ -2,9 +2,9 @@
 
 ## Clone of Avast Password Generator [Link](https://www.avast.com/en-in/random-password-generator#pc)📝
 
-<!-- ## Live Demo here  -> [Link](https://snap-magic.vercel.app/) ⭐ -->
+## Live Demo here  -> [Link](https://passgeneratorneel.netlify.app/) ⭐
 
-<!-- ## Working of the App Video -> [Link](https://youtu.be/9y6bvnO9Yq8)✨ -->
+## Working of the App Video -> [Link](https://youtu.be/5e3aaIEiau8)✨
 
 ### Images of the App with there prompt! :memo:
 ![Image 1](https://github.com/Neel-max-cpu/PasswordGenerator/blob/main/public/image/1.png?raw=true)
